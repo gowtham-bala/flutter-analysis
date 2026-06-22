@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/login_screen.dart';
 // Removed import of external login screen and provide a local placeholder
 // to ensure `LoginScreen` is available. Replace with your actual
 // implementation or restore the import when the class exists.
@@ -14,17 +15,13 @@ class FinanceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Finance Dashboard',
-
-      //dark theme
+      title: 'Financial Dashboard',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(
-          0xFF0F0F11,
-        ), // Ultra dark background
-        cardColor: const Color(0xFF18181C), // Slightly lighter for cards
+        scaffoldBackgroundColor: const Color(0xFF0F0F11),
+        cardColor: const Color(0xFF18181C),
         colorScheme: const ColorScheme.dark(
-          primary: Color(0xFF1A5CFF), // Vibrant Accent Blue
-          secondary: Color(0xFF10B981), // Emerald Green
+          primary: Color(0xFF1A5CFF),
+          secondary: Color(0xFF10B981),
           surface: Color(0xFF18181C),
         ),
         textTheme: const TextTheme(
@@ -32,10 +29,10 @@ class FinanceApp extends StatelessWidget {
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
-          bodyMedium: TextStyle(color: Color(0xFF94A3B8)), // Muted text gray
+          bodyMedium: TextStyle(color: Color(0xFF94A3B8)),
         ),
       ),
-      home: const LoginScreen(),
+      home: LoginScreen(), // <-- JUST REMOVE 'const' FROM THIS LINE
     );
   }
 }
