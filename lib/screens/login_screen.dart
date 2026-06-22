@@ -57,8 +57,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 8),
                 TextField(
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ), // <-- Add this line for typing visibility!
                   decoration: InputDecoration(
                     hintText: "Uame",
+                    hintStyle: const TextStyle(
+                      color: Colors.white30,
+                    ), // Keeps hint readable but faint
                     filled: true,
                     fillColor: const Color(0xFF0F0F11),
                     border: OutlineInputBorder(
@@ -71,6 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 20),
 
                 // Password Field
@@ -81,8 +88,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 8),
                 TextField(
                   obscureText: true,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ), // <-- Add this line for typing visibility!
                   decoration: InputDecoration(
                     hintText: "••••••••",
+                    hintStyle: const TextStyle(color: Colors.white30),
                     filled: true,
                     fillColor: const Color(0xFF0F0F11),
                     suffixIcon: const Icon(
@@ -99,6 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 16),
 
                 // Remember Me & Forgot Password
@@ -115,7 +127,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const Text(
                           "Remember password",
-                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
                         ),
                       ],
                     ),
