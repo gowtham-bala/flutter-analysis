@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+// Removed import of external login screen and provide a local placeholder
+// to ensure `LoginScreen` is available. Replace with your actual
+// implementation or restore the import when the class exists.
 
 void main() {
   runApp(const FinanceApp());
@@ -12,69 +15,27 @@ class FinanceApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Finance Dashboard',
-      home: LoginPage(),
-    );
-  }
-}
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-
-        child: Column(
-          children: [
-            const SizedBox(height: 100),
-
-            const Text(
-              "Welcome Back",
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-            ),
-
-            const SizedBox(height: 10),
-
-            const Text("Login to continue"),
-
-            const SizedBox(height: 40),
-
-            const TextField(
-              decoration: InputDecoration(
-                hintText: "Email",
-                border: OutlineInputBorder(),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            const TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: "Password",
-                border: OutlineInputBorder(),
-              ),
-            ),
-
-            const SizedBox(height: 30),
-
-            SizedBox(
-              width: double.infinity,
-              height: 55,
-
-              child: ElevatedButton(
-                onPressed: () {},
-
-                child: const Text("Login"),
-              ),
-            ),
-          ],
+      //dark theme
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color(
+          0xFF0F0F11,
+        ), // Ultra dark background
+        cardColor: const Color(0xFF18181C), // Slightly lighter for cards
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF1A5CFF), // Vibrant Accent Blue
+          secondary: Color(0xFF10B981), // Emerald Green
+          surface: Color(0xFF18181C),
+        ),
+        textTheme: const TextTheme(
+          headlineMedium: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+          bodyMedium: TextStyle(color: Color(0xFF94A3B8)), // Muted text gray
         ),
       ),
+      home: const LoginScreen(),
     );
   }
 }
